@@ -487,7 +487,6 @@ public class DefinitionParsing {
         int startLine = b.att().get("contentStartLine", Integer.class);
         int startColumn = b.att().get("contentStartColumn", Integer.class);
         Source source = b.att().get(Source.class);
-        Tuple2<Either<java.util.Set<KEMException>, K>, java.util.Set<KEMException>> result;
         if (cache.containsKey(b.contents())) {
             ParsedSentence parse = cache.get(b.contents());
             cachedBubbles.getAndIncrement();
@@ -495,6 +494,14 @@ public class DefinitionParsing {
             Att att = parse.getParse().att().addAll(b.att().remove("contentStartLine").remove("contentStartColumn").remove(Source.class).remove(Location.class));
             return Stream.of(new AddAtt(a -> att).apply(parse.getParse()));
         }
+        return parseBubble(cache, parser, scanner, b);
+    }
+
+    private Stream<? extends K> parseBubble(Map<String, ParsedSentence> cache, ParseInModule parser, Scanner scanner, Bubble b) {
+        int startLine = b.att().get("contentStartLine", Integer.class);
+        int startColumn = b.att().get("contentStartColumn", Integer.class);
+        Source source = b.att().get(Source.class);
+        Tuple2<Either<java.util.Set<KEMException>, K>, java.util.Set<KEMException>> result;
         result = parser.parseString(b.contents(), START_SYMBOL, scanner, source, startLine, startColumn, true, b.att().contains(Att.ANYWHERE()) || b.att().contains(Att.SIMPLIFICATION()) || ExpandMacros.isMacro(b));
         parsedBubbles.getAndIncrement();
         registerWarnings(result._2());
