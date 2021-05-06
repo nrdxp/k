@@ -160,7 +160,7 @@ public class DefinitionParsing {
         return mutable(def.entryModules());
     }
 
-    public Map<String, ParseCache> loadCaches() {
+    private Map<String, ParseCache> loadCaches() {
         Map<String, ParseCache> result;
         //noinspection unchecked
         result = cacheParses ? loader.loadCache(Map.class, cacheFile) : null;
@@ -310,7 +310,7 @@ public class DefinitionParsing {
                 module.att());
     }
 
-    public Definition resolveNonConfigBubbles(Definition defWithConfig) {
+    private Definition resolveNonConfigBubbles(Definition defWithConfig) {
         RuleGrammarGenerator gen = new RuleGrammarGenerator(defWithConfig);
         Module ruleParserModule = gen.getRuleGrammar(defWithConfig.mainModule());
         ParseCache cache = loadCache(ruleParserModule);
