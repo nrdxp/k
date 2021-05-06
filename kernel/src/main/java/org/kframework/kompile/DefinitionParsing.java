@@ -316,15 +316,16 @@ public class DefinitionParsing {
         ParseCache cache = loadCache(ruleParserModule);
         try (ParseInModule parser = RuleGrammarGenerator.getCombinedGrammar(cache.getModule(), isStrict, profileRules, files)) {
             parser.getScanner(options.global);
-            Map<String, Module> parsed = defWithConfig.parMap(m -> this.resolveNonConfigBubbles(m, parser.getScanner(options.global), gen));
+            Map<String, Module> parsed = defWithConfig.parMap(m -> {
+                if (stream(m.localSentences()).noneMatch(s -> s instanceof Bubble))
+                    return m;
+                return this.resolveNonConfigBubbles(m, parser.getScanner(options.global), gen);
+            });
             return DefinitionTransformer.from(m -> Module(m.name(), m.imports(), parsed.get(m.name()).localSentences(), m.att()), "parsing rules").apply(defWithConfig);
         }
     }
 
     private Module resolveNonConfigBubbles(Module module, Scanner scanner, RuleGrammarGenerator gen) {
-        if (stream(module.localSentences()).noneMatch(s -> s instanceof Bubble))
-            return module;
-
         Module ruleParserModule = gen.getRuleGrammar(module);
 
         ParseCache cache = loadCache(ruleParserModule);
