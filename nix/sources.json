@@ -39,12 +39,12 @@
         "branch": "main",
         "description": "A library of useful Nix functions",
         "homepage": null,
-        "owner": "ttuegel",
+        "owner": "kreisys",
         "repo": "nix-lib",
-        "rev": "66bb0ab890ff4d828a2dcfc7d5968465d0c7084f",
-        "sha256": "03828qxfxc1xv44jj6y2ar5h58lcppg0admn0smqzm3s1gk6rbnc",
+        "rev": "e62c580ac0d2e8133bb2f3326c312ac86d348277",
+        "sha256": "0vrfqns7mh1vkg8ix0qa2wmryrhj8bsacx2rd59abwqp99132nmb",
         "type": "tarball",
-        "url": "https://github.com/ttuegel/nix-lib/archive/66bb0ab890ff4d828a2dcfc7d5968465d0c7084f.tar.gz",
+        "url": "https://github.com/kreisys/nix-lib/archive/e62c580ac0d2e8133bb2f3326c312ac86d348277.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
