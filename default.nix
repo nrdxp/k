@@ -1,9 +1,6 @@
-let
-  sources = import ./nix/sources.nix;
-  pinned = import sources."nixpkgs" { config = {}; overlays = []; };
-in
-
-{ pkgs ? pinned
+{ pkgs ? import sources."nixpkgs" { inherit system; config = {}; overlays = []; }
+, system ? builtins.currentSystem
+, sources ? import ./nix/sources.nix { inherit system; }
 
 # Build an optimized release package.
 # Currently requires dependents to use LTO. Use sparingly.
@@ -33,6 +30,7 @@ let
   };
 
   haskell-backend-project = import ./haskell-backend/src/main/native/haskell-backend {
+    inherit system; 
     src = ttuegel.cleanGitSubtree {
       src = ./.;
       subDir = "haskell-backend/src/main/native/haskell-backend";
