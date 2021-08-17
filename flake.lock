@@ -1,0 +1,98 @@
+{
+  "nodes": {
+    "haskell-backend": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1629149595,
+        "narHash": "sha256-r1T9LNHtVVrckEmbRQUFpZ8QOv6IHxMNnh0JbsJ1PNs=",
+        "rev": "65e36305b91eab085a2f1a1a56187dedc3a8b1e8",
+        "revCount": 3742,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/kreisys/kore"
+      },
+      "original": {
+        "rev": "65e36305b91eab085a2f1a1a56187dedc3a8b1e8",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/kreisys/kore"
+      }
+    },
+    "k-web-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1628512103,
+        "narHash": "sha256-i8RUJ7x918KFbldAL2kxj+/uuRrhljfeGchEKeRhoDw=",
+        "rev": "189fe6650488f8f04dc89d25a61cdfd888cd9dd8",
+        "revCount": 15,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/runtimeverification/k-web-theme"
+      },
+      "original": {
+        "rev": "189fe6650488f8f04dc89d25a61cdfd888cd9dd8",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/runtimeverification/k-web-theme"
+      }
+    },
+    "llvm-backend": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1629149797,
+        "narHash": "sha256-mFHKbcxu0JacTUOjvu2CPdEIAa478DPMbi/f6Yrkh0o=",
+        "rev": "dc7eebd37782204e1988483269a34a70bf1a697c",
+        "revCount": 351,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/kreisys/llvm-backend"
+      },
+      "original": {
+        "rev": "dc7eebd37782204e1988483269a34a70bf1a697c",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/kreisys/llvm-backend"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1629150585,
+        "narHash": "sha256-Mcjl8awcRZbB/cpKouseX7co9PV36OnrN8UetaU86W4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "57b6c8c5b280ac06e1005ba92592b5a213d96695",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "haskell-backend": "haskell-backend",
+        "k-web-theme": "k-web-theme",
+        "llvm-backend": "llvm-backend",
+        "nixpkgs": "nixpkgs",
+        "utils": "utils"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1628100524,
+        "narHash": "sha256-vqI3p9fNj0C4ykTwMjryztszLHq9YU7AUkRJ9BK7rpE=",
+        "owner": "kreisys",
+        "repo": "flake-utils",
+        "rev": "7e5e32b9b20e6091adf27d7cdb1e0a0578b6f4f6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kreisys",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
