@@ -49,7 +49,7 @@
     packages = {
         k, clang, llvm-backend, haskell-backend, mavenix, mkShell;
     }: {
-      inherit k;
+      inherit k clang llvm-backend haskell-backend mavenix mkShell;
       defaultPackage = k;
     };
   };
