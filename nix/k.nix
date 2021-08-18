@@ -8,20 +8,19 @@ let
   unwrapped = mavenix.buildMaven {
     name = "k-5.1.0";
     infoFile = ./mavenix.lock;
-    inherit src;
-    #src =
-    #  cleanSourceWith {
-    #    name = "k";
-    #    src = cleanGit { src = ./..; name = "k"; };
-    #    ignore =
-    #      [
-    #        "result*" "nix/" "*.nix"
-    #        "haskell-backend/src/main/native/haskell-backend/*"
-    #        "llvm-backend/src/main/native/llvm-backend/*"
-    #        "!llvm-backend/src/main/native/llvm-backend/matching"  # need pom.xml
-    #        "k-distribution/tests/regression-new"
-    #      ];
-    #  };
+    src =
+      cleanSourceWith {
+        name = "k";
+        src = cleanGit { src = ./..; name = "k"; };
+        ignore =
+          [
+            "result*" "nix/" "*.nix"
+            "haskell-backend/src/main/native/haskell-backend/*"
+            "llvm-backend/src/main/native/llvm-backend/*"
+            "!llvm-backend/src/main/native/llvm-backend/matching"  # need pom.xml
+            "k-distribution/tests/regression-new"
+          ];
+      };
 
     # Cannot enable unit tests until a bug is fixed upstream (in Mavenix).
     doCheck = false;

@@ -42,7 +42,7 @@
           cp -r "${k-web-theme}" $out/web/k-web-theme
         '';
     in {
-      inherit (import src { inherit (final) system; inherit src; })
+      inherit (import src { inherit (final) system; })
         k clang llvm-backend haskell-backend mavenix mkShell;
     };
 
