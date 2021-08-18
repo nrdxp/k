@@ -3,6 +3,7 @@
 
   inputs = {
       utils.url = "github:kreisys/flake-utils";
+      nixpkgs.url = "github:NixOS/nixpkgs/16b3b1eef03e6fb8211b095079aba5059f26081e";
 
       haskell-backend = {
           submodules = true;
@@ -38,11 +39,10 @@
 
           cp -r "${haskell-backend}" $out/haskell-backend/src/main/native/haskell-backend
           cp -r "${llvm-backend}" $out/llvm-backend/src/main/native/llvm-backend
-          ${final.findutils}/bin/find $_
           cp -r "${k-web-theme}" $out/web/k-web-theme
         '';
     in {
-      inherit (import src { inherit (final) system; })
+      inherit (import src { inherit (final) system; inherit src; })
         k clang llvm-backend haskell-backend mavenix mkShell;
     };
 
