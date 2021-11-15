@@ -3,19 +3,19 @@
     "haskell-backend": {
       "flake": false,
       "locked": {
-        "lastModified": 1629149595,
-        "narHash": "sha256-r1T9LNHtVVrckEmbRQUFpZ8QOv6IHxMNnh0JbsJ1PNs=",
-        "rev": "65e36305b91eab085a2f1a1a56187dedc3a8b1e8",
-        "revCount": 3742,
+        "lastModified": 1637011223,
+        "narHash": "sha256-qOyX0QvlLeEsmQj9zASoQwpG3b5nlYPcjbPwML25U8c=",
+        "ref": "master",
+        "rev": "95e53961ffb48f924fc64104b1af21cd2da37644",
+        "revCount": 3743,
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/kreisys/kore"
+        "url": "https://github.com/nrdxp/kore"
       },
       "original": {
-        "rev": "65e36305b91eab085a2f1a1a56187dedc3a8b1e8",
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/kreisys/kore"
+        "url": "https://github.com/nrdxp/kore"
       }
     },
     "k-web-theme": {

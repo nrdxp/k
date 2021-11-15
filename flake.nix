@@ -8,9 +8,8 @@
       haskell-backend = {
           submodules = true;
           type = "git";
-          url = "https://github.com/kreisys/kore";
+          url = "https://github.com/nrdxp/kore";
           flake = false;
-          rev = "65e36305b91eab085a2f1a1a56187dedc3a8b1e8";
       };
       llvm-backend = {
           submodules = true;
