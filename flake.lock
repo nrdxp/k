@@ -3,11 +3,11 @@
     "haskell-backend": {
       "flake": false,
       "locked": {
-        "lastModified": 1637011223,
-        "narHash": "sha256-qOyX0QvlLeEsmQj9zASoQwpG3b5nlYPcjbPwML25U8c=",
+        "lastModified": 1637013816,
+        "narHash": "sha256-rFQe/FBBdIeArnycnZAXjFOWnXXuOA7cdQ0MBPL2yJQ=",
         "ref": "master",
-        "rev": "95e53961ffb48f924fc64104b1af21cd2da37644",
-        "revCount": 3743,
+        "rev": "96e9bb8ee1f731963fa9966614e8d09e2f6afc06",
+        "revCount": 3744,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/nrdxp/kore"
